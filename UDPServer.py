@@ -14,7 +14,7 @@ import json
 s = socket.socket(type=socket.SOCK_DGRAM)         # 创建 socket 对象
 host = '192.168.52.128'     # 绑定到所有端口
 port = 12347                # 设置端口
-s.bind((host, port))        # 绑定端口
+s.bind((host, port))        # 绑定端口55094
 
 # UDP通信不需要先连接，所以没有conn对象，服务端发送消息必须指定address且只能用sendto()方法
 # 所以要先知道发消息给你的客户端IP地址，使用recvfrom()方法会用元组接受数据和客户端地址

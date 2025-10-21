@@ -13,7 +13,7 @@ import socket                                     # 导入 socket 模块
 import struct                                     # 用于处理二进制数据
 
 s = socket.socket(type=socket.SOCK_DGRAM)         # 创建 socket 对象
-host = '192.168.52.128'                           # 远程主机IP地址
+host = '10.68.62.79'                              # 远程主机IP地址
 port = 12347                                      # 设置端口号
 
 img = cv2.imread('right.png')
@@ -26,7 +26,7 @@ fhead = struct.pack('l', len(img_bytes))
 s.sendto(fhead, (host, port))
 print('发送文件头')
 
-#循环发送图片码流
+# 循环发送图片码流
 print('开始发送图片数据...')
 for i in range(len(img_bytes)//1024+1):  # //为除法取整，+1包括小于1024字节的部分
     if 1024*(i+1) >= len(img_bytes):        

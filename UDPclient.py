@@ -12,8 +12,8 @@ import socket               # 导入 socket 模块
 import json
  
 s = socket.socket(type=socket.SOCK_DGRAM)         # 创建 socket 对象
-host = '192.168.52.128'       # 远程主机IP地址
-port = 12347                 # 设置端口号
+host = '10.31.242.211'       # 远程主机IP地址
+port = 8081                 # 设置端口号
 
 MyData = [1., 2., 3., 4.]   # 发送列表测试
 json_Data = json.dumps(MyData).encode('utf-8')   # 转换为JSON字符串并编码
@@ -27,7 +27,7 @@ while 1:
         break
     
     # 接受消息
-    data = s.recv(1024)
-    data = json.loads(data.decode("utf-8"))
-    print(f'服务端发送的消息:{data}')
+    data = s.recv(1024).decode("utf-8")
+    data = json.loads(data)
+    print(f'服务端发送的消息:{data}')                           
 s.close()

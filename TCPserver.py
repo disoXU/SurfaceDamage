@@ -24,8 +24,8 @@ while True:
     
     # 回复消息
     msg = input("请输入你要回复客户端的消息：")
+    c.send(msg.encode('utf-8'))
     if msg == 'quit':
         break
-    c.send(msg.encode('utf-8'))
 c.close()               # 关闭连接
 s.close()

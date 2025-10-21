@@ -14,7 +14,7 @@ import socket               # 导入 socket 模块
 import struct
 
 s = socket.socket(type=socket.SOCK_DGRAM)         # 创建 socket 对象
-host = '192.168.52.128'       # 本地主机IP地址
+host = '0.0.0.0'              # 绑定本地主机所有IP地址
 port = 12347                  # 设置端口号
 s.bind((host, port))          # 绑定端口
 print("等待接收消息...")
